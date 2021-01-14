@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets\css\style.css" />
     <title>Work Day Scheduler</title>
 </head>
 
@@ -19,22 +19,24 @@
         <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-        <div class="card mb-3">
-            <div class="row no-gutters">
-                <div class="col-md-3">
-                    Time
-                </div>
-                <div class="col-md-9">
-                    <div class="card-body">
-                        <h5 class="card-title">Event</h5>
-                        <p class="card-text">This will be the text of the events</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
+        <div class="m-5 row no-gutters">
+
+            <div class="time-event-header col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+                <h2>Time</h2>
             </div>
+            <div class="event-contents col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <h2>Event</h2>
+                <ul id="eventList" class="event-list"></ul>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 ">
+                <h2>Save icon</h2>
+                <ul id="save-icon" class="save-icon"></ul>
+            </div>
+
         </div>
     </div>
-    <script src=" https://code.jquery.com/jquery-3.4.1.min.js "></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js "></script>
 </body>
 
