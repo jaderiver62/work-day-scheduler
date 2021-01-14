@@ -2,6 +2,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1;
+    padding-bottom: 70px;
 }
 
 textarea {
@@ -79,4 +80,18 @@ textarea {
 .saveBtn i:hover {
     font-size: 20px;
     transition: all .3s ease-in-out;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(101, 34, 146);
+    color: white;
+    text-align: center;
+}
+
+.footer p {
+    padding: 10px;
 }

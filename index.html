@@ -13,30 +13,32 @@
 </head>
 
 <body>
-    <header class="jumbotron">
+    <header class="jumbotron sticky-top d-flex flex-column p-4 p-lg-3">
         <h1 class="display-3">Work Day Scheduler</h1>
         <p class="lead">A simple calendar app for scheduling your work day</p>
         <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-        <div class="m-5 row no-gutters">
+        <div class="m-4 row">
 
-            <div class="time-event-header col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
-                <h2>Time</h2>
+            <div class="time-event-header col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <h5>Time</h5>
             </div>
             <div class="event-contents col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                <h2>Event</h2>
-                <ul id="eventList" class="event-list"></ul>
+                <h6>Event</h6>
             </div>
 
-            <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 ">
-                <h2>Save icon</h2>
-                <ul id="save-icon" class="save-icon"></ul>
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 ">
+                <h6>Save icon</h6>
             </div>
 
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js "></script>
+    <div class="footer">
+        <p>Footer</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js ">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js "></script>
 </body>
 
