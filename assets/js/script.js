@@ -1,7 +1,7 @@
 var events = {};
 
 
-var currentMomentObj = moment();
+var currentMomentObj = moment("3:30pm", 'h:mma');
 var currentMomentString = currentMomentObj.format("dddd, MMMM Do YYYY, h:mm:ss a");
 
 var createCalendar = function(thisMoment) {
@@ -12,8 +12,8 @@ var createCalendar = function(thisMoment) {
     var amPm = "am";
 
     for (var i = 0; i < timeArray.length; i++) {
-        var string = timeArray[i] + ':00' + amPm;
-        var listTime = moment(string, 'h:mma').format('h:mma');
+        var timeIndex = timeArray[i] + ':00' + amPm;
+        var listTime = moment(timeIndex, 'h:mma').format('ha');
 
         var timeEl = $("<div>")
             .addClass("time-element p-5")
@@ -23,10 +23,13 @@ var createCalendar = function(thisMoment) {
             .addClass("event-element p-5")
             .attr("id", "event-time-block")
             .text("Event Info");
-        var compareMoment = moment(string, 'h:mma');
+
+        var compareMoment = moment(timeIndex, 'ha');
         if (currentMomentObj.isAfter(compareMoment)) {
+            eventEl.attr("style", "background-color: grey;");
+        } else if (compareMoment.isSame(currentMomentObj)) {
             eventEl.attr("style", "background-color: red;");
-        } else { eventEl.attr("style", "background-color: blue;"); }
+        } else { eventEl.attr("style", "background-color: green;"); }
 
         $("#time-column").append(timeEl);
         $("#event-column").append(eventEl);

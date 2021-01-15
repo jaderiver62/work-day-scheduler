@@ -93,9 +93,9 @@ textarea {
     border-bottom: 1px solid black;
 }
 
-
-/*
-.event-element {}*/
+.event-element {
+    border: 1px solid white;
+}
 
 
 /*
