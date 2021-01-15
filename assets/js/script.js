@@ -13,11 +13,11 @@ var createCalendar = function(thisMoment) {
 
     for (var i = 0; i < timeArray.length; i++) {
         var string = timeArray[i] + ':00' + amPm;
-        var compareTime = moment(string, 'h:mma').format('h:mma');
+        var listTime = moment(string, 'h:mma').format('h:mma');
 
         var timeEl = $("<div>")
             .addClass("time-element p-5")
-            .text(compareTime);
+            .text(listTime);
         if (timeArray[i] === 11) { amPm = "pm"; };
         var eventEl = $("<div>")
             .addClass("event-element p-5")
