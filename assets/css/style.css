@@ -14,15 +14,20 @@ textarea {
     padding: 10px;
 }
 
+
+/*
 .time-event-header {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
-}
+}*/
 
+
+/*
 .event-contents {
     border-right: 1px solid black;
 }
+*/
 
 .jumbotron {
     text-align: center;
@@ -82,11 +87,23 @@ textarea {
     transition: all .3s ease-in-out;
 }
 
+.time-element {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+
+/*
+.event-element {}*/
+
+
+/*
 .footer {
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
+    padding: 70px;
     background-color: rgb(101, 34, 146);
     color: white;
     text-align: center;
@@ -95,3 +112,5 @@ textarea {
 .footer p {
     padding: 10px;
 }
+
+*/
