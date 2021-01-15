@@ -1,7 +1,7 @@
 var events = {};
 
 
-var currentMomentObj = moment();
+var currentMomentObj = moment("3:30pm", 'h:mma');
 var currentMomentString = currentMomentObj.format("dddd, MMMM Do YYYY, h:mm:ss a");
 
 var createCalendar = function(thisMoment) {
@@ -10,20 +10,33 @@ var createCalendar = function(thisMoment) {
 
     $("#currentDay").append(currentMomentString);
     var amPm = "am";
+
     for (var i = 0; i < timeArray.length; i++) {
+        var timeIndex = timeArray[i] + ':00' + amPm;
+        var listTime = moment(timeIndex, 'h:mma').format('ha');
+
         var timeEl = $("<div>")
             .addClass("time-element p-5")
-            .text(timeArray[i] + amPm);
+            .text(listTime);
         if (timeArray[i] === 11) { amPm = "pm"; };
         var eventEl = $("<div>")
             .addClass("event-element p-5")
+            .attr("id", "event-time-block")
             .text("Event Info");
-        var saveIconEl = $("<div>")
-            .addClass("save-icon-element p-5")
-            .text("save icon");
+
+        var compareMoment = moment(timeIndex, 'ha');
+        var compareNumber = compareMoment.hour();
+        var actualNumber = currentMomentObj.hour();
+        if (currentMomentObj.isBefore(compareMoment)) { eventEl.attr("style", "background-color: green;"); } else if (compareNumber === (actualNumber)) {
+            eventEl.attr("style", "background-color: red;");
+        } else if (currentMomentObj.isAfter(compareMoment)) {
+            eventEl.attr("style", "background-color: grey;");
+        }
+
+
+
         $("#time-column").append(timeEl);
         $("#event-column").append(eventEl);
-        $("#save-delete-icon").append(saveIconEl);
 
     }
 

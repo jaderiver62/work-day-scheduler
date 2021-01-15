@@ -88,14 +88,13 @@ textarea {
 }
 
 .time-element {
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    border: 1px solid black;
+    border-left: none;
 }
 
-
-/*
-.event-element {}*/
+.event-element {
+    border: 1px solid white;
+}
 
 
 /*
