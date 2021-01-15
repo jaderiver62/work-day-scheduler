@@ -27,10 +27,10 @@ var createCalendar = function(thisMoment) {
         var compareMoment = moment(timeIndex, 'ha');
         var compareNumber = compareMoment.hour();
         var actualNumber = currentMomentObj.hour();
-        if (currentMomentObj.isBefore(compareMoment)) { eventEl.attr("style", "background-color: green;"); } else if (compareNumber === (actualNumber)) {
-            eventEl.attr("style", "background-color: red;");
+        if (currentMomentObj.isBefore(compareMoment)) { eventEl.attr("style", "background-color: rgb(107, 238, 107);"); } else if (compareNumber === (actualNumber)) {
+            eventEl.attr("style", "background-color: rgb(240, 51, 51);");
         } else if (currentMomentObj.isAfter(compareMoment)) {
-            eventEl.attr("style", "background-color: grey;");
+            eventEl.attr("style", "background-color: rgb(165, 161, 161);");
         }
 
 
