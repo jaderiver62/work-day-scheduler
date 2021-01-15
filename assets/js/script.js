@@ -12,18 +12,18 @@ var createCalendar = function(thisMoment) {
     var amPm = "am";
     for (var i = 0; i < timeArray.length; i++) {
         var timeEl = $("<div>")
-            .addClass("time-element")
+            .addClass("time-element p-5")
             .text(timeArray[i] + amPm);
         if (timeArray[i] === 11) { amPm = "pm"; };
         var eventEl = $("<div>")
-            .addClass("event-element")
+            .addClass("event-element p-5")
             .text("Event Info");
         var saveIconEl = $("<div>")
-            .addClass("save-icon-element")
+            .addClass("save-icon-element p-5")
             .text("save icon");
         $("#time-column").append(timeEl);
         $("#event-column").append(eventEl);
-        $("#save-icon").append(saveIconEl);
+        $("#save-delete-icon").append(saveIconEl);
 
     }
 
