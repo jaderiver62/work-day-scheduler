@@ -22,6 +22,7 @@ var createCalendar = function(thisMoment) {
         var eventEl = $("<div>")
             .addClass("event-element p-5")
             .attr("id", "event-time-block")
+            .attr("contentEditable", true)
             .text("Event Info");
 
         var compareMoment = moment(timeIndex, 'ha');
