@@ -23,6 +23,10 @@ var createCalendar = function(thisMoment) {
             .addClass("event-element p-5")
             .attr("id", "event-time-block")
             .text("Event Info");
+        var compareMoment = moment(string, 'h:mma');
+        if (currentMomentObj.isAfter(compareMoment)) {
+            eventEl.attr("style", "background-color: red;");
+        } else { eventEl.attr("style", "background-color: blue;"); }
 
         $("#time-column").append(timeEl);
         $("#event-column").append(eventEl);
