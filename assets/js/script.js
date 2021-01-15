@@ -25,11 +25,15 @@ var createCalendar = function(thisMoment) {
             .text("Event Info");
 
         var compareMoment = moment(timeIndex, 'ha');
-        if (currentMomentObj.isAfter(compareMoment)) {
-            eventEl.attr("style", "background-color: grey;");
-        } else if (compareMoment.isSame(currentMomentObj)) {
+        var compareNumber = compareMoment.hour();
+        var actualNumber = currentMomentObj.hour();
+        if (currentMomentObj.isBefore(compareMoment)) { eventEl.attr("style", "background-color: green;"); } else if (compareNumber === (actualNumber)) {
             eventEl.attr("style", "background-color: red;");
-        } else { eventEl.attr("style", "background-color: green;"); }
+        } else if (currentMomentObj.isAfter(compareMoment)) {
+            eventEl.attr("style", "background-color: grey;");
+        }
+
+
 
         $("#time-column").append(timeEl);
         $("#event-column").append(eventEl);
