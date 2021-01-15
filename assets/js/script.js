@@ -23,13 +23,9 @@ var createCalendar = function(thisMoment) {
             .addClass("event-element p-5")
             .attr("id", "event-time-block")
             .text("Event Info");
-        var saveIconEl = $("<div>")
-            .addClass("save-icon-element p-5")
-            .text("save icon");
 
         $("#time-column").append(timeEl);
         $("#event-column").append(eventEl);
-        $("#save-delete-icon").append(saveIconEl);
 
     }
 
