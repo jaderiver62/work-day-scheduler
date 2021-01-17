@@ -16,7 +16,7 @@ var createCalendar = function(thisMoment) {
         var listTime = moment(timeIndex, 'h:mma').format('ha');
 
         var timeEl = $("<div>")
-            .addClass("time-element p-5")
+            .addClass("time-hour-block p-5")
             .text(listTime);
         if (timeArray[i] === 11) { amPm = "pm"; };
         var eventEl = $("<div>")
@@ -27,13 +27,18 @@ var createCalendar = function(thisMoment) {
         var compareMoment = moment(timeIndex, 'ha');
         var compareNumber = compareMoment.hour();
         var actualNumber = currentMomentObj.hour();
-        if (currentMomentObj.isBefore(compareMoment)) { eventEl.attr("style", "background-color: rgb(107, 238, 107);"); } else if (compareNumber === (actualNumber)) {
+        if (currentMomentObj.isBefore(compareMoment)) {
+            eventEl.attr("style", "background-color: rgb(107, 238, 107);");
+
+        } else if (compareNumber === (actualNumber)) {
             eventEl.attr("style", "background-color: rgb(240, 51, 51);");
         } else if (currentMomentObj.isAfter(compareMoment)) {
             eventEl.attr("style", "background-color: rgb(165, 161, 161);");
         }
         var saveButton = $("<button>")
-            .addClass("saveBtn btn-lg p-5");
+            .addClass("saveBtn btn-lg oi oi-paperclip p-5");
+
+
 
         $("#time-column").append(timeEl);
         $("#event-column").append(eventEl);
