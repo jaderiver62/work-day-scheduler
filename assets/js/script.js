@@ -1,7 +1,7 @@
 var events = {};
 
 
-var currentMomentObj = moment("3:30pm", 'h:mma');
+var currentMomentObj = moment();
 var currentMomentString = currentMomentObj.format("dddd, MMMM Do YYYY, h:mm:ss a");
 
 var createCalendar = function(thisMoment) {
@@ -21,8 +21,7 @@ var createCalendar = function(thisMoment) {
         if (timeArray[i] === 11) { amPm = "pm"; };
         var eventEl = $("<div>")
             .addClass("event-element")
-            .attr("id", "event-time-block")
-            .html("<textarea class='event-form'></textarea>");
+            .html("<textarea id='event-time-block' class='event-form'></textarea>");
 
         var compareMoment = moment(timeIndex, 'ha');
         var compareNumber = compareMoment.hour();
@@ -36,7 +35,8 @@ var createCalendar = function(thisMoment) {
             eventEl.attr("style", "background-color: rgb(165, 161, 161);");
         }
         var saveButton = $("<button>")
-            .addClass("saveBtn btn-lg oi oi-paperclip p-5");
+            .addClass("saveBtn btn-lg oi oi-paperclip p-5")
+            .attr("id", "save-button-element");
 
 
 
@@ -47,4 +47,10 @@ var createCalendar = function(thisMoment) {
     }
 
 };
+$(document).ready(function() {
+    $("button").on("click", function() {
+        var myValue = $.trim($("#event-time-block").val());
+        console.log(myValue);
+    });
+});
 createCalendar();
