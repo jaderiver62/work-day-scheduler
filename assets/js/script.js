@@ -20,9 +20,9 @@ var createCalendar = function(thisMoment) {
             .text(listTime);
         if (timeArray[i] === 11) { amPm = "pm"; };
         var eventEl = $("<div>")
-            .addClass("event-element p-5")
+            .addClass("event-element")
             .attr("id", "event-time-block")
-            .text("Event Info");
+            .html("<textarea class='event-form'></textarea>");
 
         var compareMoment = moment(timeIndex, 'ha');
         var compareNumber = compareMoment.hour();
