@@ -22,7 +22,7 @@ var createCalendar = function(thisMoment) {
         if (timeArray[i] === 11) { amPm = "pm"; };
         var eventEl = $("<div>")
             .addClass("event-element")
-            .html("<textarea id='event-time-block' class='event-form' data-time=" + listTime + "></textarea>");
+            .html("<textarea id='" + listTime + "' class='event-form' ></textarea>");
 
 
         var compareMoment = moment(timeIndex, 'ha');
@@ -38,7 +38,7 @@ var createCalendar = function(thisMoment) {
         }
         var saveButton = $("<button>")
             .addClass("saveBtn btn-lg oi oi-paperclip p-5")
-            .attr("id", "save-button-element");
+            .attr("id", listTime);
 
 
 
@@ -51,12 +51,9 @@ var createCalendar = function(thisMoment) {
 };
 $(document).ready(function() {
     $("button").on("click", function() {
-        var myValue = $.trim($("#event-time-block").val());
-        var myTime = $("#event-time-block").data("time");
-        console.log(myValue);
-        console.log(myTime);
-
-
+        var timeId = $(this).attr('id');
+        var myText = $.trim($("#" + timeId).val());
+        console.log(timeId + " : " + myText);
     });
 });
 createCalendar();
