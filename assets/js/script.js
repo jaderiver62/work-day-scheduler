@@ -1,5 +1,5 @@
-var events = {};
-
+var events = [];
+var textEventEl;
 
 var currentMomentObj = moment();
 var currentMomentString = currentMomentObj.format("dddd, MMMM Do YYYY, h:mm:ss a");
@@ -17,11 +17,13 @@ var createCalendar = function(thisMoment) {
 
         var timeEl = $("<div>")
             .addClass("time-hour-block p-5")
+            .attr("id", "time-hour-block")
             .text(listTime);
         if (timeArray[i] === 11) { amPm = "pm"; };
         var eventEl = $("<div>")
             .addClass("event-element")
-            .html("<textarea id='event-time-block' class='event-form'></textarea>");
+            .html("<textarea id='event-time-block' class='event-form' data-time=" + listTime + "></textarea>");
+
 
         var compareMoment = moment(timeIndex, 'ha');
         var compareNumber = compareMoment.hour();
@@ -50,7 +52,11 @@ var createCalendar = function(thisMoment) {
 $(document).ready(function() {
     $("button").on("click", function() {
         var myValue = $.trim($("#event-time-block").val());
+        var myTime = $("#event-time-block").data("time");
         console.log(myValue);
+        console.log(myTime);
+
+
     });
 });
 createCalendar();
