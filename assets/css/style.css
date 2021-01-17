@@ -7,26 +7,30 @@ body {
 
 .event-form {
     background: transparent;
+    border: none;
+    resize: none;
     color: #000000;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-    border-right: 1px solid white;
     border-left: 1px solid black;
-<<<<<<< HEAD
-=======
     margin: 0;
     padding: 0; 
     width: 100%;
     height: 114px;
->>>>>>> develop
 }
 
 
-/*.time-event-header {
+/*
+.time-event-header {
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
 }*/
+
+
+/*
+.event-contents {
+    border-right: 1px solid black;
+}
+*/
 
 .jumbotron {
     text-align: center;
@@ -47,7 +51,9 @@ body {
 
 .row {
     white-space: pre-wrap;
+    height: 80px;
     border-top: 1px solid white;
+    ;
 }
 
 .hour {
@@ -77,17 +83,9 @@ body {
     border-bottom-right-radius: 15px;
     background-color: #06AED5;
     color: white;
-<<<<<<< HEAD
-    height: 200px;
-}
-
-.form-inline {
-    width: 100%;
-=======
     height: 114px;
     display: block;
 
->>>>>>> develop
 }
 
 .saveBtn i:hover {
@@ -98,28 +96,13 @@ body {
 .time-element {
     border: 1px solid black;
     border-left: none;
-<<<<<<< HEAD
-    height: 200px;
-=======
     height: 114px;
->>>>>>> develop
 }
 
 .event-element {
     border: 1px solid white;
-<<<<<<< HEAD
-    height: 200px;
-}
-
-.text-event-area {
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-=======
     height: 114px;
     padding: 0;
->>>>>>> develop
 }
 
 

@@ -16,38 +16,14 @@ var createCalendar = function(thisMoment) {
         var listTime = moment(timeIndex, 'h:mma').format('ha');
 
         var timeEl = $("<div>")
-            .addClass("time-element")
-            /*            .attr("style", "background-color:red;")*/
+            .addClass("time-element p-5")
             .text(listTime);
         if (timeArray[i] === 11) { amPm = "pm"; };
         var eventEl = $("<div>")
             .addClass("event-element")
             .attr("id", "event-time-block")
-<<<<<<< HEAD
-            .html("<span><form class='form-inline'><div class='form-group-text'><textarea class='text-event-area col='90%'>Click me!</textarea></div><div class='form-group-button'><button class='saveBtn btn-lg'></button></div></form>");
-        /* eventEl.innerHTML = "<form class='form-inline'><div class='form-group-text'><textarea class='text-event-area'>Click me!</textarea></div><div class='form-group-button'><button class='saveBtn btn-lg'></button></div></form>";*/
-        /*        var formEl = $("<form>")
-                    .addClass("form-inline");
-                var divTextEl = $("<div>")
-                    .addClass("form-group");
-                var textEl = $("<textarea>")
-                    .addClass("text-event-area")
-                    .text("Click me!");
-                divTextEl.append(textEl);
-                formEl.append(divTextEl);
-        */
-        /*    var divButtonEl = $("<div>")
-            .addClass("form-group");
-        var saveButton = $("<button>")
-            .addClass("saveBtn btn-lg");
-        divButtonEl.append(saveButton);
-        formEl.append(divButtonEl);
-*/
-        $("#time-column").append(timeEl);
-=======
             .html("<textarea class='event-form'></textarea>");
 
->>>>>>> develop
         var compareMoment = moment(timeIndex, 'ha');
         var compareNumber = compareMoment.hour();
         var actualNumber = currentMomentObj.hour();
@@ -56,15 +32,10 @@ var createCalendar = function(thisMoment) {
         } else if (currentMomentObj.isAfter(compareMoment)) {
             eventEl.attr("style", "background-color: rgb(165, 161, 161);");
         }
-<<<<<<< HEAD
-        /*        eventEl.append(formEl);*/
-
-=======
         var saveButton = $("<button>")
             .addClass("saveBtn btn-lg p-5");
 
         $("#time-column").append(timeEl);
->>>>>>> develop
         $("#event-column").append(eventEl);
         $("#save-column").append(saveButton);
 
