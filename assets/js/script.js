@@ -20,23 +20,24 @@ var createCalendar = function(thisMoment) {
             .text(listTime);
         if (timeArray[i] === 11) { amPm = "pm"; };
         var eventEl = $("<div>")
-            .addClass("event-element p-5")
+            .addClass("event-element")
             .attr("id", "event-time-block")
-            .text("Event Info");
+            .html("<textarea class='event-form'></textarea>");
 
         var compareMoment = moment(timeIndex, 'ha');
         var compareNumber = compareMoment.hour();
         var actualNumber = currentMomentObj.hour();
-        if (currentMomentObj.isBefore(compareMoment)) { eventEl.attr("style", "background-color: green;"); } else if (compareNumber === (actualNumber)) {
-            eventEl.attr("style", "background-color: red;");
+        if (currentMomentObj.isBefore(compareMoment)) { eventEl.attr("style", "background-color: rgb(107, 238, 107);"); } else if (compareNumber === (actualNumber)) {
+            eventEl.attr("style", "background-color: rgb(240, 51, 51);");
         } else if (currentMomentObj.isAfter(compareMoment)) {
-            eventEl.attr("style", "background-color: grey;");
+            eventEl.attr("style", "background-color: rgb(165, 161, 161);");
         }
-
-
+        var saveButton = $("<button>")
+            .addClass("saveBtn btn-lg p-5");
 
         $("#time-column").append(timeEl);
         $("#event-column").append(eventEl);
+        $("#save-column").append(saveButton);
 
     }
 
