@@ -21,8 +21,7 @@ var createCalendar = function(thisMoment) {
         if (timeArray[i] === 11) { amPm = "pm"; };
         var eventEl = $("<div>")
             .addClass("event-element p-5")
-            .attr("id", "event-time-block-" + listTime)
-            .attr("contentEditable", true)
+            .attr("id", "event-time-block")
             .text("Event Info");
 
         var compareMoment = moment(timeIndex, 'ha');
@@ -33,12 +32,12 @@ var createCalendar = function(thisMoment) {
         } else if (currentMomentObj.isAfter(compareMoment)) {
             eventEl.attr("style", "background-color: rgb(165, 161, 161);");
         }
-        var saveDiv = $("<div>")
-            .addClass("save-div p-5");
-
+        var saveButton = $("<button>")
+            .addClass("saveBtn btn-lg p-5");
 
         $("#time-column").append(timeEl);
         $("#event-column").append(eventEl);
+        $("#save-column").append(saveButton);
 
     }
 
