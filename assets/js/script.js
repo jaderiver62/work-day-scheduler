@@ -23,6 +23,7 @@ var createCalendar = function(thisMoment) {
         var eventEl = $("<div>")
             .addClass("event-element")
             .attr("id", "event-time-block")
+<<<<<<< HEAD
             .html("<span><form class='form-inline'><div class='form-group-text'><textarea class='text-event-area col='90%'>Click me!</textarea></div><div class='form-group-button'><button class='saveBtn btn-lg'></button></div></form>");
         /* eventEl.innerHTML = "<form class='form-inline'><div class='form-group-text'><textarea class='text-event-area'>Click me!</textarea></div><div class='form-group-button'><button class='saveBtn btn-lg'></button></div></form>";*/
         /*        var formEl = $("<form>")
@@ -43,6 +44,10 @@ var createCalendar = function(thisMoment) {
         formEl.append(divButtonEl);
 */
         $("#time-column").append(timeEl);
+=======
+            .html("<textarea class='event-form'></textarea>");
+
+>>>>>>> develop
         var compareMoment = moment(timeIndex, 'ha');
         var compareNumber = compareMoment.hour();
         var actualNumber = currentMomentObj.hour();
@@ -51,9 +56,17 @@ var createCalendar = function(thisMoment) {
         } else if (currentMomentObj.isAfter(compareMoment)) {
             eventEl.attr("style", "background-color: rgb(165, 161, 161);");
         }
+<<<<<<< HEAD
         /*        eventEl.append(formEl);*/
 
+=======
+        var saveButton = $("<button>")
+            .addClass("saveBtn btn-lg p-5");
+
+        $("#time-column").append(timeEl);
+>>>>>>> develop
         $("#event-column").append(eventEl);
+        $("#save-column").append(saveButton);
 
     }
 
