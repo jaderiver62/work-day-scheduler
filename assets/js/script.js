@@ -37,7 +37,7 @@ var createCalendar = function(thisMoment) {
             eventEl.attr("style", "background-color: rgb(165, 161, 161);");
         }
         var saveButton = $("<button>")
-            .addClass("saveBtn btn-lg oi oi-paperclip p-5")
+            .addClass("saveBtn btn-lg oi oi-circle-check p-5")
             .attr("id", listTime);
 
 
@@ -51,9 +51,14 @@ var createCalendar = function(thisMoment) {
 };
 $(document).ready(function() {
     $("button").on("click", function() {
+        var myButton = $(this);
         var timeId = $(this).attr('id');
         var myText = $.trim($("#" + timeId).val());
-        console.log(timeId + " : " + myText);
+        if (myText.length !== 0) {
+            console.log(timeId + " : " + myText);
+            myButton.removeClass("oi-circle-check");
+            myButton.addClass("oi-circle-x");
+        }
     });
 });
 createCalendar();
