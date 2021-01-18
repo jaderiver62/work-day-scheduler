@@ -14,5 +14,5 @@
 ###### :sparkles:https://jaderiver62.github.io/work-day-scheduler/
 
 Contact Info:
-:sparkles:[jaderiver64@gmail.com](mailto:jaderiver64@gmail.com)
+:sparkles:[jaderiver64@gmail.com](mailto:jaderiver64@gmail.com):sparkles:
 <div align="center">&#169; Nina Cummings, 2021</div>
