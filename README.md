@@ -1,4 +1,4 @@
-# <div align="center">:sparkle:work-day-scheduler:sparkle:</div>
+# <div align="center">:sparkle:Work Day Scheduler:sparkle:</div>
 ---
 
 
