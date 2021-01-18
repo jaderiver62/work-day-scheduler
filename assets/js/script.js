@@ -50,8 +50,8 @@ var createCalendar = function(thisMoment) {
     }
 
 };
-var addMyEvent = function(texty, timey) {
-    $("#" + timey).html(texty);
+var addMyEvent = function(thisText, thisTime) {
+    $("#" + thisText).html(thisTime);
 }
 $(document).ready(function() {
 
@@ -76,10 +76,12 @@ var saveEvents = function() {
     localStorage.setItem("events", JSON.stringify(events));
 };
 var loadTasks = function() {
-    events = JSON.parse(localStorage.getItem("events"));
-    for (var i = 0; i < events.length; i++) {
-        addMyEvent(events[i].text, events[i].time);
-        console.log(events[i]);
+    if (events.length > 0) {
+        events = JSON.parse(localStorage.getItem("events"));
+        for (var i = 0; i < events.length; i++) {
+            addMyEvent(events[i].text, events[i].time);
+            console.log(events[i]);
+        }
     }
 
 };
