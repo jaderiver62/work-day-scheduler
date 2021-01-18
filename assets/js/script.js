@@ -57,9 +57,9 @@ $(document).ready(function() {
 
     $("button").on("click", function() {
         var myButton = $(this);
-        var timeId = $(this).attr('id');
+        var timeId = myButton.attr('id');
         var myText = $.trim($("#" + timeId).val());
-        if (myButton.length > 0) {
+        if (myText.length > 0) {
             console.log(timeId + " : " + myText);
             events.push({
                 text: myText,
@@ -68,7 +68,7 @@ $(document).ready(function() {
             saveEvents();
             addMyEvent(myText, timeId);
         }
-    });
+    }); // repeat events???
 
 });
 
