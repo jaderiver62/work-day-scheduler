@@ -46,19 +46,42 @@ var createCalendar = function(thisMoment) {
         $("#event-column").append(eventEl);
         $("#save-column").append(saveButton);
 
+
     }
 
 };
+var addMyEvent = function(texty, timey) {
+    $("#" + timey).html(texty);
+}
 $(document).ready(function() {
+
     $("button").on("click", function() {
         var myButton = $(this);
         var timeId = $(this).attr('id');
         var myText = $.trim($("#" + timeId).val());
-        if (myText.length !== 0) {
+        if (myButton.length > 0) {
             console.log(timeId + " : " + myText);
-            myButton.removeClass("oi-circle-check");
-            myButton.addClass("oi-circle-x");
+            events.push({
+                text: myText,
+                time: timeId
+            });
+            saveEvents();
+            addMyEvent(myText, timeId);
         }
     });
+
 });
+
+var saveEvents = function() {
+    localStorage.setItem("events", JSON.stringify(events));
+};
+var loadTasks = function() {
+    events = JSON.parse(localStorage.getItem("events"));
+    for (var i = 0; i < events.length; i++) {
+        addMyEvent(events[i].text, events[i].time);
+        console.log(events[i]);
+    }
+
+};
 createCalendar();
+loadTasks();
