@@ -1,30 +1,10 @@
-/* Style Sheet */
+/* Style sheet main content*/
 
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1;
     padding: 0;
-}
-
-.container-fluid {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.event-form {
-    background: transparent;
-    border: none;
-    resize: none;
-    color: #000000;
-    font-weight: bold;
-    border-left: 1px solid black;
-    padding: 10px;
-    width: 100%;
-    height: 114px;
-    text-align: left;
-    word-break: normal;
 }
 
 .jumbotron {
@@ -39,9 +19,13 @@ body {
     white-space: pre-wrap;
 }
 
-.time-block {
-    text-align: center;
-    border-radius: 15px;
+
+/* Container for the calendar */
+
+.container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .row {
@@ -50,12 +34,21 @@ body {
     border-top: 1px solid white;
 }
 
-.time-hour-block {
-    background-color: #ffffff;
+
+/* Event styles, button & the text input area */
+
+.event-form {
+    background: transparent;
+    border: none;
+    resize: none;
     color: #000000;
-    border-top: 1px dashed #000000;
-    height: 114px;
     font-weight: bold;
+    border-left: 1px solid black;
+    padding: 10px;
+    width: 100%;
+    height: 114px;
+    text-align: left;
+    word-break: normal;
 }
 
 .saveBtn {
@@ -74,12 +67,6 @@ body {
     transition: all .3s ease-in-out;
 }
 
-.time-element {
-    border: 1px solid black;
-    border-left: none;
-    height: 114px;
-}
-
 .event-element {
     border: 1px solid white;
     height: 114px;
@@ -88,4 +75,26 @@ body {
 
 .event-element:hover {
     opacity: .9;
+}
+
+
+/* Style the time block */
+
+.time-block {
+    text-align: center;
+    border-radius: 15px;
+}
+
+.time-hour-block {
+    background-color: #ffffff;
+    color: #000000;
+    border-top: 1px dashed #000000;
+    height: 114px;
+    font-weight: bold;
+}
+
+.time-element {
+    border: 1px solid black;
+    border-left: none;
+    height: 114px;
 }
