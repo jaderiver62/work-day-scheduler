@@ -1,4 +1,3 @@
-var textEventEl;
 var events = [];
 var currentMomentObj = moment();
 var currentMomentString = currentMomentObj.format("dddd, MMMM Do YYYY, h:mm:ss a");
