@@ -8,7 +8,7 @@
 #### - Create flexability with the calendar day options
 #### - Event drag and drop abilities
 
-![screenshot of scheduler]https://github.com/jaderiver62/work-day-scheduler/blob/main/assets/css/images/screenshot2.png?raw=true)
+![screenshot of scheduler](https://github.com/jaderiver62/work-day-scheduler/blob/main/assets/css/images/screenshot2.png?raw=true)
 
 
 ###### :sparkles: https://jaderiver62.github.io/work-day-scheduler/ :sparkles:
