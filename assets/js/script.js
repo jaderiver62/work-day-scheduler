@@ -22,7 +22,7 @@ var createCalendar = function(thisMoment) {
         if (timeArray[i] === 11) { amPm = "pm"; };
         var eventEl = $("<div>")
             .addClass("event-element")
-            .html("<textarea id='event-time-block' class='event-form' data-time=" + listTime + "></textarea>");
+            .html("<textarea id='" + listTime + "' class='event-form' ></textarea>");
 
 
         var compareMoment = moment(timeIndex, 'ha');
@@ -37,8 +37,8 @@ var createCalendar = function(thisMoment) {
             eventEl.attr("style", "background-color: rgb(165, 161, 161);");
         }
         var saveButton = $("<button>")
-            .addClass("saveBtn btn-lg oi oi-paperclip p-5")
-            .attr("id", "save-button-element");
+            .addClass("saveBtn btn-lg oi oi-circle-check p-5")
+            .attr("id", listTime);
 
 
 
@@ -46,17 +46,42 @@ var createCalendar = function(thisMoment) {
         $("#event-column").append(eventEl);
         $("#save-column").append(saveButton);
 
+
     }
 
 };
+var addMyEvent = function(texty, timey) {
+    $("#" + timey).html(texty);
+}
 $(document).ready(function() {
+
     $("button").on("click", function() {
-        var myValue = $.trim($("#event-time-block").val());
-        var myTime = $("#event-time-block").data("time");
-        console.log(myValue);
-        console.log(myTime);
-
-
+        var myButton = $(this);
+        var timeId = $(this).attr('id');
+        var myText = $.trim($("#" + timeId).val());
+        if (myButton.length > 0) {
+            console.log(timeId + " : " + myText);
+            events.push({
+                text: myText,
+                time: timeId
+            });
+            saveEvents();
+            addMyEvent(myText, timeId);
+        }
     });
+
 });
+
+var saveEvents = function() {
+    localStorage.setItem("events", JSON.stringify(events));
+};
+var loadTasks = function() {
+    events = JSON.parse(localStorage.getItem("events"));
+    for (var i = 0; i < events.length; i++) {
+        addMyEvent(events[i].text, events[i].time);
+        console.log(events[i]);
+    }
+
+};
 createCalendar();
+loadTasks();
