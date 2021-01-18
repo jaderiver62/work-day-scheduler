@@ -1,6 +1,5 @@
-var events = [];
 var textEventEl;
-
+var events = [];
 var currentMomentObj = moment();
 var currentMomentString = currentMomentObj.format("dddd, MMMM Do YYYY, h:mm:ss a");
 
@@ -50,8 +49,15 @@ var createCalendar = function(thisMoment) {
     }
 
 };
-var addMyEvent = function(texty, timey) {
-    $("#" + timey).html(texty);
+var addMyEvent = function(myTextEl, myTimeEl) {
+    console.log(myTimeEl + " : " + myTextEl);
+    var eventObj = {
+        time: myTimeEl,
+        text: myTextEl
+    };
+    events.push(eventObj);
+    $("#" + myTimeEl).html(myTextEl);
+    saveEvents();
 }
 $(document).ready(function() {
 
@@ -60,15 +66,23 @@ $(document).ready(function() {
         var timeId = myButton.attr('id');
         var myText = $.trim($("#" + timeId).val());
         if (myText.length > 0) {
-            console.log(timeId + " : " + myText);
-            events.push({
-                text: myText,
-                time: timeId
-            });
-            saveEvents();
-            addMyEvent(myText, timeId);
+            var isDuplicate = false;
+            if (!events) {
+                addMyEvent(myText, timeId);
+            } else {
+                for (var i = 0; i < events.length && !isDuplicate; i++) {
+                    if ((timeId === events[i].time) &&
+                        (myText === events[i].text)) {
+                        isDuplicate = true;
+                    }
+                }
+                if (!isDuplicate) {
+                    addMyEvent(myText, timeId);
+                } else { return false; }
+            }
+
         }
-    }); // repeat events???
+    });
 
 });
 
@@ -76,11 +90,15 @@ var saveEvents = function() {
     localStorage.setItem("events", JSON.stringify(events));
 };
 var loadTasks = function() {
-    events = JSON.parse(localStorage.getItem("events"));
-    for (var i = 0; i < events.length; i++) {
-        addMyEvent(events[i].text, events[i].time);
-        console.log(events[i]);
-    }
+
+    var loadedEvents = JSON.parse(localStorage.getItem("events"));
+    if (loadedEvents) {
+        for (var i = 0; i < loadedEvents.length; i++) {
+            addMyEvent(loadedEvents[i].text, loadedEvents[i].time);
+            console.log(loadedEvents[i]);
+        }
+        events = loadedEvents;
+    } else { return false; }
 
 };
 createCalendar();
