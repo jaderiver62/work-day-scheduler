@@ -50,8 +50,8 @@ var createCalendar = function(thisMoment) {
     }
 
 };
-var addMyEvent = function(texty, timey) {
-    $("#" + timey).html(texty);
+var addMyEvent = function(thisText, thisTime) {
+    $("#" + thisText).html(thisTime);
 }
 $(document).ready(function() {
 
