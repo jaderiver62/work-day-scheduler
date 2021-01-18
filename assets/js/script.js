@@ -46,7 +46,8 @@ var createCalendar = function(thisMoment) {
         }
         // A button for the user to click and it will save the contents of the textarea
         var saveButton = $("<button>")
-            .addClass("saveBtn btn-lg oi oi-circle-check p-5")
+            .addClass("saveBtn btn-lg far fa-save p-5")
+            // sing Awesome Font save icon
             .attr("id", listTime);
         // I used the time slot as the unique id
 
