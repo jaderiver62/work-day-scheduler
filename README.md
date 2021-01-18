@@ -1,1 +1,1 @@
-# work-day-scheduler
+# :sparkle:work-day-scheduler:sparkle:
