@@ -103,3 +103,6 @@ var loadTasks = function() {
 };
 createCalendar();
 loadTasks();
+setInterval(function() {
+    window.location.reload();
+}, 300000);
