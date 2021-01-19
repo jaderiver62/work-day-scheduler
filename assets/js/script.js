@@ -16,7 +16,7 @@ var createCalendar = function(thisMoment) {
     var amPm = "am";
     //  Using a variable to set up the time-block rows
     for (var i = 0; i < timeArray.length; i++) {
-        //translating each array value into moment objects so the time is comparable
+        // translating each array value into moment objects so the time is comparable
         // I wanted the value to be available for multiple uses
         var timeIndex = timeArray[i] + ':00' + amPm;
         var listTime = moment(timeIndex, 'h:mma').format('ha');
@@ -47,7 +47,7 @@ var createCalendar = function(thisMoment) {
         // A button for the user to click and it will save the contents of the textarea
         var saveButton = $("<button>")
             .addClass("saveBtn btn-lg far fa-save p-5")
-            // sing Awesome Font save icon
+            // using Awesome Font save icon
             .attr("id", listTime);
         // I used the time slot as the unique id
 
@@ -60,7 +60,7 @@ var createCalendar = function(thisMoment) {
     }
 
 };
-// This function takes in the text and time slot to creat an event object
+// This function takes in the text and time slot to create an event object
 // The event object is then pushed to the events array and added to the correct area within the HTML
 var addMyEvent = function(myTextEl, myTimeEl) {
     console.log(myTimeEl + " : " + myTextEl);
